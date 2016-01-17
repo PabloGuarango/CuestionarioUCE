@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/clearTemplate.xhtml">
+	<ui:define name="tituloPagina">Encuesta FAPUC</ui:define>
+	<ui:define name="tituloFormulario"></ui:define>
+	<ui:define name="contenido">
+		<h:form>
+			<p:panel>
+				<p:outputLabel value="BIENVENIDOS" />
+				<p:separator />
+				<p:panelGrid columns="2">
+					<h:outputLabel for="txtCedula" value="Cedula:"
+						style="font-weight: bold;" />
+					<p:inputText id="txtCedula" value="#{loginBean.usuario.cedula}" required="true"/>
+					<h:outputLabel for="txtCorreo" value="Correo:"
+						style="font-weight: bold;" />
+					<p:inputText id="txtCorreo" value="#{loginBean.usuario.correo}" required="true"/>
+					<h:outputLabel for="txtToken" value="Token:"
+						style="font-weight: bold;" />
+					<p:inputText id="txtToken" value="#{loginBean.usuario.token}" required="tru"/>
+				</p:panelGrid>
+				<p:separator />
+				<p:commandButton value="Iniciar encuesta" action="#{loginBean.validarUsuario()}" />
+			</p:panel>
+		</h:form>
+	</ui:define>
+	<ui:define name="autor">FAPUC</ui:define>
+</ui:composition>
+</html>

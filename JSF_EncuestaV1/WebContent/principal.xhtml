@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/clearTemplate.xhtml">
+	<ui:define name="tituloPagina">Encuesta FAPUC</ui:define>
+	<ui:define name="tituloFormulario"></ui:define>
+	<ui:define name="contenido">
+		<h:form>
+			<p:panel>
+				<p:outputLabel value="BIENVENIDOS" />
+				<p:separator />
+				<p:outputLabel
+					value="La FAPUC, preocupada por el bienestar de los docentes, el desempeño de sus funciones en correspondencia con el nivel deseado de excelencia y calidad en la gestión, se encuentra interesada en identificar las percepciones de los principales problemas que afectan a la comunidad universitaria y como estos repercuten en la gestión académica, administrativa y financiera. En tal sentido, solicitamos responda las siguientes inquietudes considerando que la informaciaón proporcionada será tratada de manera confidencial. El cuestionario presenta una serie de interrogantes con varias opciones de respuesta, por favor, marque con una X la opción que considere se acerca más a su criterio.">
+				</p:outputLabel>
+				<p:separator />
+				<p:commandButton value="Login" action="/login.jsf" />
+			</p:panel>
+		</h:form>
+	</ui:define>
+	<ui:define name="autor">FAPUC</ui:define>
+</ui:composition>
+</html>
+
