@@ -10,22 +10,33 @@
 	<ui:define name="tituloFormulario"></ui:define>
 	<ui:define name="contenido">
 		<h:form>
+		<p:growl id="growl" showDetail="true" sticky="true" />
 			<p:panel>
 				<p:outputLabel value="BIENVENIDOS" />
 				<p:separator />
 				<p:panelGrid columns="2">
-					<h:outputLabel for="txtCedula" value="Cedula:"
+					<h:outputLabel for="Cedula" value="Cedula:"
 						style="font-weight: bold;" />
-					<p:inputText id="txtCedula" value="#{loginBean.usuario.cedula}" required="true"/>
-					<h:outputLabel for="txtCorreo" value="Correo:"
+					<p:inputText id="Cedula" value="#{loginBean.usuario.cedula}"
+						required="true">
+						<f:validateBean />
+					</p:inputText>
+					<h:outputLabel for="Correo" value="Correo:"
 						style="font-weight: bold;" />
-					<p:inputText id="txtCorreo" value="#{loginBean.usuario.correo}" required="true"/>
-					<h:outputLabel for="txtToken" value="Token:"
+					<p:inputText id="Correo" value="#{loginBean.usuario.correo}"
+						required="true">
+						<f:validateBean />
+					</p:inputText>
+					<h:outputLabel for="Token" value="Token:"
 						style="font-weight: bold;" />
-					<p:inputText id="txtToken" value="#{loginBean.usuario.token}" required="tru"/>
+					<p:inputText id="Token" value="#{loginBean.usuario.token}"
+						required="true">
+						<f:validateBean />
+					</p:inputText>
 				</p:panelGrid>
 				<p:separator />
-				<p:commandButton value="Iniciar encuesta" action="#{loginBean.validarUsuario()}" />
+				<p:commandButton value="Iniciar encuesta"
+					action="#{loginBean.validarUsuario()}" update="@form"/>
 			</p:panel>
 		</h:form>
 	</ui:define>

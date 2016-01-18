@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import com.encuesta.entidades.Usuario;
 import com.encuesta.model.servicio.ServicioGenerico;
@@ -32,7 +34,9 @@ public class LoginBean {
 				return "/encuesta.jsf";
 			}
 		}
-		System.out.println("hsjsjskdkd");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, new FacesMessage("Successful",
+				"Your message: " ));
 		return null;
 	}
 	public Usuario getUsuario() {

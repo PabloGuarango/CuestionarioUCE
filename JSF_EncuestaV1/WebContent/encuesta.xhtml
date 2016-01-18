@@ -10,44 +10,53 @@
 	<ui:define name="tituloFormulario"></ui:define>
 	<ui:define name="contenido">
 		<h:form>
-			<p:panel>
+			<p:panel id="contenedor">
+				<p:separator />
+				<p:commandButton value="Guardar"
+					action="#{cuestionarioBean.guardar()}" process="@form"
+					update="@form"></p:commandButton>
+				<p:separator />
 				<h3>I.IDENTIFICACIÓN</h3>
 				<p:separator />
 
 				<p:panelGrid columns="3" style="width:80 px">
 					<p:outputLabel value="1.1" />
 					<p:outputLabel value="Calidad de Docente" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Titular" />
-						<f:selectItem itemLabel="Contratado" />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p11}">
+						<f:selectItem itemLabel="Titular" itemValue="1" />
+						<f:selectItem itemLabel="Contratado" itemValue="2" />
 					</p:selectOneRadio>
 
 
 					<p:outputLabel value="1.2" />
 					<p:outputLabel value="Tiempo de dedicación" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Tiempo completo (TC)." />
-						<f:selectItem itemLabel="Medio tiempo (MT)" />
-						<f:selectItem itemLabel="Tiempo Parcial (TP)" />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p12}">
+						<f:selectItem itemLabel="Tiempo completo (TC)." itemValue="1" />
+						<f:selectItem itemLabel="Medio tiempo (MT)" itemValue="2" />
+						<f:selectItem itemLabel="Tiempo Parcial (TP)" itemValue="3" />
 					</p:selectOneRadio>
 
 					<p:outputLabel value="1.3" />
 					<p:outputLabel value="Sexo" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Masculino" />
-						<f:selectItem itemLabel="Femenino" />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p13}">
+						<f:selectItem itemLabel="Masculino" itemValue="1" />
+						<f:selectItem itemLabel="Femenino" itemValue="2" />
 					</p:selectOneRadio>
 
 					<p:outputLabel value="1.4" />
 					<p:outputLabel
 						value="Formación académica más alta que ha alcanzado:" />
-					<p:selectOneRadio layout="grid" columns="2">
-						<f:selectItem itemLabel="Pre-grado" />
-						<f:selectItem itemLabel="Diplomado" />
-						<f:selectItem itemLabel="Especialista" />
-						<f:selectItem itemLabel="Magister" />
-						<f:selectItem itemLabel="PHD" />
-						<f:selectItem itemLabel="Post-Doc" />
+					<p:selectOneRadio layout="grid" columns="2"
+						value="#{cuestionarioBean.cuestionario.p14}">
+						<f:selectItem itemLabel="Pre-grado" itemValue="1" />
+						<f:selectItem itemLabel="Diplomado" itemValue="2" />
+						<f:selectItem itemLabel="Especialista" itemValue="3" />
+						<f:selectItem itemLabel="Magister" itemValue="4" />
+						<f:selectItem itemLabel="PHD" itemValue="5" />
+						<f:selectItem itemLabel="Post-Doc" itemValue="6" />
 					</p:selectOneRadio>
 
 				</p:panelGrid>
@@ -56,88 +65,88 @@
 				<p:panelGrid columns="4">
 					<p:outputLabel value="1.5a" />
 					<p:outputLabel value="Clases:	" />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15a}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5b" />
 					<p:outputLabel value="Comisión de acreditación: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15b}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5c" />
 					<p:outputLabel value="Comisión de re-diseño de la carrera: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15c}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5d" />
 					<p:outputLabel value="Coordinación de área: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15d}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5e" />
 					<p:outputLabel value="Coordinación de asignatura: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15e}" />
 					<p:outputLabel value="Horas" />
 
 
 					<p:outputLabel value="1.5f" />
 					<p:outputLabel value="Corrección de pruebas y exámenes: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15f}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5g" />
 					<p:outputLabel value="Dirección /Codirección de Tesis: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15g}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5h" />
 					<p:outputLabel value="Funciones directivas: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15h}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5i" />
 					<p:outputLabel value="Investigación Financiado por la UCE: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15i}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5j" />
 					<p:outputLabel value="Investigación Financiado por SENESCyT: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15j}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5k" />
 					<p:outputLabel value="Practicas pre profesionales: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15k}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5l" />
 					<p:outputLabel value="Preparación de Clase: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15l}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5m" />
 					<p:outputLabel value="Preparación de exámenes complexivos: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15m}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5n" />
 					<p:outputLabel value="Proyecto semilla: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15n}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5o" />
 					<p:outputLabel value="Tutorías: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15o}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5p" />
 					<p:outputLabel value="Vinculación con la comunidad: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15p}" />
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5q" />
 					<p:outputLabel value="Otras: " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15q}" />
 					<p:outputLabel value="Horas" />
 				</p:panelGrid>
 
@@ -147,7 +156,7 @@
 					<p:outputLabel value="1.6" />
 					<p:outputLabel
 						value="Incluyendo este semestre, ¿Cuántos años trabaja en la UCE? " />
-					<p:inputText value="" />
+					<p:inputText value="#{cuestionarioBean.cuestionario.p16}" required="true"/>
 					<p:outputLabel value="Años" />
 				</p:panelGrid>
 				<p:separator />
@@ -157,13 +166,15 @@
 					<p:outputLabel value="2.1" />
 					<p:outputLabel
 						value="De acuerdo con su experiencia ¿cómo calificaría el acceso al internet que proporciona la UCE?" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Excelente" />
-						<f:selectItem itemLabel="Bueno" />
-						<f:selectItem itemLabel="Regular" />
-						<f:selectItem itemLabel="Malo" />
-						<f:selectItem itemLabel="No existe" />
-						<f:selectItem itemLabel="Existe pero nunca lo he usado" />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p21}">
+						<f:selectItem itemLabel="Excelente" itemValue="1" />
+						<f:selectItem itemLabel="Bueno" itemValue="2" />
+						<f:selectItem itemLabel="Regular" itemValue="3" />
+						<f:selectItem itemLabel="Malo" itemValue="4" />
+						<f:selectItem itemLabel="No existe" itemValue="5" />
+						<f:selectItem itemLabel="Existe pero nunca lo he usado"
+							itemValue="6" />
 					</p:selectOneRadio>
 				</p:panelGrid>
 
@@ -175,15 +186,22 @@
 						value="Al momento de desarrollar sus actividades docentes ¿Dónde las desarrolla?" />
 					<p:selectManyCheckbox layout="grid" columns="1">
 						<f:selectItem
-							itemLabel="Cuento con una oficina (cubículo) individual asignado por la UCE" />
+							itemLabel="Cuento con una oficina (cubículo) individual asignado por la UCE"
+							itemValue="#{cuestionarioBean.cuestionario.p22a}" />
 						<f:selectItem
-							itemLabel="Comparto un espacio (cubículo) con otro colega" />
+							itemLabel="Comparto un espacio (cubículo) con otro colega"
+							itemValue="#{cuestionarioBean.cuestionario.p22b}" />
 						<f:selectItem
-							itemLabel="En las instalaciones de la Asociación de profesores" />
-						<f:selectItem itemLabel="En casa / oficina particular" />
-						<f:selectItem itemLabel="En un espacio dentro del laboratorio" />
-						<f:selectItem itemLabel="En la biblioteca" />
-						<f:selectItem itemLabel="Otros lugares" />
+							itemLabel="En las instalaciones de la Asociación de profesores"
+							itemValue="#{cuestionarioBean.cuestionario.p22c}" />
+						<f:selectItem itemLabel="En casa / oficina particular"
+							itemValue="#{cuestionarioBean.cuestionario.p22d}" />
+						<f:selectItem itemLabel="En un espacio dentro del laboratorio"
+							itemValue="#{cuestionarioBean.cuestionario.p22e}" />
+						<f:selectItem itemLabel="En la biblioteca"
+							itemValue="#{cuestionarioBean.cuestionario.p22f}" />
+						<f:selectItem itemLabel="Otros lugares"
+							itemValue="#{cuestionarioBean.cuestionario.p22g}" />
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -194,17 +212,25 @@
 						value="Al momento de brindar tutoría a estudiantes ¿Dónde las desarrolla?" />
 					<p:selectManyCheckbox layout="grid" columns="1">
 						<f:selectItem
-							itemLabel="En mi oficina (cubículo) individual asignado por la UCE" />
+							itemLabel="En mi oficina (cubículo) individual asignado por la UCE"
+							itemValue="#{cuestionarioBean.cuestionario.p23a}" />
 						<f:selectItem
-							itemLabel="En un espacio (cubículo) compartido con otro colega" />
+							itemLabel="En un espacio (cubículo) compartido con otro colega"
+							itemValue="#{cuestionarioBean.cuestionario.p23b}" />
 						<f:selectItem
-							itemLabel="En las instalaciones de la Asociación de profesores" />
-						<f:selectItem itemLabel="En casa / oficina particular" />
-						<f:selectItem itemLabel="En un espacio dentro del laboratorio" />
+							itemLabel="En las instalaciones de la Asociación de profesores"
+							itemValue="#{cuestionarioBean.cuestionario.p23c}" />
+						<f:selectItem itemLabel="En casa / oficina particular"
+							itemValue="#{cuestionarioBean.cuestionario.p23d}" />
+						<f:selectItem itemLabel="En un espacio dentro del laboratorio"
+							itemValue="#{cuestionarioBean.cuestionario.p23e}" />
 						<f:selectItem
-							itemLabel="En un espacio determinado por la UCE para tutorías" />
-						<f:selectItem itemLabel="En la biblioteca" />
-						<f:selectItem itemLabel="Otros lugares" />
+							itemLabel="En un espacio determinado por la UCE para tutorías"
+							itemValue="#{cuestionarioBean.cuestionario.p23f}" />
+						<f:selectItem itemLabel="En la biblioteca"
+							itemValue="#{cuestionarioBean.cuestionario.p23g}" />
+						<f:selectItem itemLabel="Otros lugares"
+							itemValue="#{cuestionarioBean.cuestionario.p23h}" />
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -214,12 +240,17 @@
 					<p:outputLabel
 						value="Cuando requiere realizar un trabajo relacionado con actividades docentes ¿El trabajo informático lo hace en" />
 					<p:selectManyCheckbox layout="grid" columns="1">
-						<f:selectItem itemLabel="Computadora asignada por la UCE?" />
-						<f:selectItem itemLabel="Computadora personal?" />
+						<f:selectItem itemLabel="Computadora asignada por la UCE?"
+							itemValue="#{cuestionarioBean.cuestionario.p24a}" />
+						<f:selectItem itemLabel="Computadora personal?"
+							itemValue="#{cuestionarioBean.cuestionario.p24b}" />
 						<f:selectItem
-							itemLabel="Computadora de la asociación de profesores?" />
-						<f:selectItem itemLabel="Computadora de alquiler?" />
-						<f:selectItem itemLabel="Otras computadoras?" />
+							itemLabel="Computadora de la asociación de profesores?"
+							itemValue="#{cuestionarioBean.cuestionario.p24c}" />
+						<f:selectItem itemLabel="Computadora de alquiler?"
+							itemValue="#{cuestionarioBean.cuestionario.p24d}" />
+						<f:selectItem itemLabel="Otras computadoras?"
+							itemValue="#{cuestionarioBean.cuestionario.p24e}" />
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -230,12 +261,17 @@
 					<p:outputLabel
 						value="Cuando requiere imprimir un trabajo relacionado a actividades docentes ¿El trabajo informático lo hace en: " />
 					<p:selectManyCheckbox layout="grid" columns="1">
-						<f:selectItem itemLabel="Impresora asignada por la UCE?" />
-						<f:selectItem itemLabel="Impresora personal?" />
+						<f:selectItem itemLabel="Impresora asignada por la UCE?"
+							itemValue="#{cuestionarioBean.cuestionario.p25a}" />
+						<f:selectItem itemLabel="Impresora personal?"
+							itemValue="#{cuestionarioBean.cuestionario.p25b}" />
 						<f:selectItem
-							itemLabel="Impresora de la asociación de profesores?" />
-						<f:selectItem itemLabel="Impresora de alquiler?" />
-						<f:selectItem itemLabel="Otras impresoras?" />
+							itemLabel="Impresora de la asociación de profesores?"
+							itemValue="#{cuestionarioBean.cuestionario.p25c}" />
+						<f:selectItem itemLabel="Impresora de alquiler?"
+							itemValue="#{cuestionarioBean.cuestionario.p25d}" />
+						<f:selectItem itemLabel="Otras impresoras?"
+							itemValue="#{cuestionarioBean.cuestionario.p25e}" />
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -246,13 +282,19 @@
 						value="De requerir realizar una llamada telefónica relacionada con las actividades de la UCE, ¿Utiliza:   " />
 					<p:selectManyCheckbox layout="grid" columns="1">
 						<f:selectItem
-							itemLabel="1.	Teléfono de mi oficina (cubículo) en la facultad?" />
+							itemLabel="1.	Teléfono de mi oficina (cubículo) en la facultad?"
+							itemValue="#{cuestionarioBean.cuestionario.p26a}" />
 						<f:selectItem
-							itemLabel="2.	Teléfono de secretaría u otras dependencias de la facultad?" />
-						<f:selectItem itemLabel="3.	Teléfono de asociación de profesores?" />
-						<f:selectItem itemLabel="4.	Teléfono personal?" />
-						<f:selectItem itemLabel="5.	Teléfono de alquiler?" />
-						<f:selectItem itemLabel="Otros?" />
+							itemLabel="2.	Teléfono de secretaría u otras dependencias de la facultad?"
+							itemValue="#{cuestionarioBean.cuestionario.p26b}" />
+						<f:selectItem itemLabel="3.	Teléfono de asociación de profesores?"
+							itemValue="#{cuestionarioBean.cuestionario.p26c}" />
+						<f:selectItem itemLabel="4.	Teléfono personal?"
+							itemValue="#{cuestionarioBean.cuestionario.p26d}" />
+						<f:selectItem itemLabel="5.	Teléfono de alquiler?"
+							itemValue="#{cuestionarioBean.cuestionario.p26e}" />
+						<f:selectItem itemLabel="Otros?"
+							itemValue="#{cuestionarioBean.cuestionario.p26f}" />
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -261,14 +303,19 @@
 					<p:outputLabel value="2.7" />
 					<p:outputLabel
 						value="¿Dispone de cancel para guardar artículos personales y/o materiales de trabajo?" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Si, individual asignado por la facultad." />
-						<f:selectItem itemLabel="Si, compartido asignado por la facultad." />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p27}">
+						<f:selectItem itemLabel="Si, individual asignado por la facultad."
+							itemValue="1" />
+						<f:selectItem itemLabel="Si, compartido asignado por la facultad."
+							itemValue="2" />
 						<f:selectItem
-							itemLabel="Si, individual asignado por la Asociación de profesores." />
+							itemLabel="Si, individual asignado por la Asociación de profesores."
+							itemValue="3" />
 						<f:selectItem
-							itemLabel="Si, compartido asignado por la Asociación de profesores." />
-						<f:selectItem itemLabel="No dispongo de cancel." />
+							itemLabel="Si, compartido asignado por la Asociación de profesores."
+							itemValue="4" />
+						<f:selectItem itemLabel="No dispongo de cancel." itemValue="5" />
 					</p:selectOneRadio>
 				</p:panelGrid>
 
@@ -277,13 +324,18 @@
 					<p:outputLabel value="2.8" />
 					<p:outputLabel
 						value="¿En su facultad cuenta con baterías sanitarias" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Exclusivas de la UCE para profesores?" />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p28}">
+						<f:selectItem itemLabel="Exclusivas de la UCE para profesores?"
+							itemValue="1" />
 						<f:selectItem
-							itemLabel="Exclusivas de la asociación de profesores?" />
-						<f:selectItem itemLabel="Compartidas con personal administrativo?" />
-						<f:selectItem itemLabel="Compartidas con estudiantes?" />
-						<f:selectItem itemLabel="No." />
+							itemLabel="Exclusivas de la asociación de profesores?"
+							itemValue="2" />
+						<f:selectItem itemLabel="Compartidas con personal administrativo?"
+							itemValue="3" />
+						<f:selectItem itemLabel="Compartidas con estudiantes?"
+							itemValue="4" />
+						<f:selectItem itemLabel="No." itemValue="5" />
 					</p:selectOneRadio>
 				</p:panelGrid>
 
@@ -292,10 +344,11 @@
 					<p:outputLabel value="2.9" />
 					<p:outputLabel
 						value="¿Qué tan adecuadas diría Usted que son las salas de reuniones de su facultad?" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Adecuadas" />
-						<f:selectItem itemLabel="Inadecuadas" />
-						<f:selectItem itemLabel="No existen" />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p29}">
+						<f:selectItem itemLabel="Adecuadas" itemValue="1" />
+						<f:selectItem itemLabel="Inadecuadas" itemValue="2" />
+						<f:selectItem itemLabel="No existen" itemValue="3" />
 					</p:selectOneRadio>
 				</p:panelGrid>
 
@@ -304,195 +357,210 @@
 					<p:outputLabel value="2.10" />
 					<p:outputLabel
 						value="¿Tiene acceso a bibliotecas virtuales de la UCE?" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Si, dentro y fuera de la UCE" />
-						<f:selectItem itemLabel="Si, solo dentro de la UCE" />
-						<f:selectItem itemLabel="Si, solo fuera de la UCE" />
-						<f:selectItem itemLabel="No tengo acceso  (PASE A 2.15)" />
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p210}">
+						<f:selectItem itemLabel="Si, dentro y fuera de la UCE"
+							itemValue="1" />
+						<f:selectItem itemLabel="Si, solo dentro de la UCE" itemValue="2" />
+						<f:selectItem itemLabel="Si, solo fuera de la UCE" itemValue="3" />
+						<f:selectItem itemLabel="No tengo acceso  (PASE A 2.15)"
+							itemValue="4" />
+						<p:ajax process="@this" event="change" update="preguntasV"></p:ajax>
 					</p:selectOneRadio>
 				</p:panelGrid>
 
 				<h4></h4>
-				<p:panelGrid columns="3" style="width:80 px">
-					<p:outputLabel value="2.11" />
-					<p:outputLabel
-						value="Con que frecuencia accede Usted a las bibliotecas virtuales de la UCE? " />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Muy frecuentemente" />
-						<f:selectItem itemLabel="Frecuentemente" />
-						<f:selectItem itemLabel="A veces" />
-						<f:selectItem itemLabel="Nunca " />
-					</p:selectOneRadio>
-				</p:panelGrid>
+				<p:panel id="preguntasV">
+					<p:panelGrid columns="3" style="width:80 px"
+						rendered="#{cuestionarioBean.cuestionario.p210!=4}">
+						<p:outputLabel value="2.11" />
+						<p:outputLabel
+							value="Con que frecuencia accede Usted a las bibliotecas virtuales de la UCE? " />
+						<p:selectOneRadio layout="grid" columns="1"
+							value="#{cuestionarioBean.cuestionario.p211}">
+							<f:selectItem itemLabel="Muy frecuentemente" itemValue="1" />
+							<f:selectItem itemLabel="Frecuentemente" itemValue="2" />
+							<f:selectItem itemLabel="A veces" itemValue="3" />
+							<f:selectItem itemLabel="Nunca " itemValue="4" />
+						</p:selectOneRadio>
+					</p:panelGrid>
 
-				<h4></h4>
-				<p:panelGrid columns="3">
-					<p:outputLabel value="2.12" />
-					<p:outputLabel
-						value="¿Cómo calificaría Usted la calidad de información de las bibliotecas virtuales de la UCE a las que ha accedido?" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Excelente" />
-						<f:selectItem itemLabel="Bueno" />
-						<f:selectItem itemLabel="Regular" />
-						<f:selectItem itemLabel="Malo" />
-					</p:selectOneRadio>
-				</p:panelGrid>
-
-
-				<h4></h4>
-				<p:panelGrid columns="3">
-					<p:outputLabel value="2.13" />
-					<p:outputLabel
-						value="¿Cómo calificaría Usted el acceso a las bibliotecas virtuales de la UCE?" />
-					<p:selectOneRadio layout="grid" columns="1">
-						<f:selectItem itemLabel="Excelente" />
-						<f:selectItem itemLabel="Bueno" />
-						<f:selectItem itemLabel="Regular" />
-						<f:selectItem itemLabel="Malo" />
-					</p:selectOneRadio>
-				</p:panelGrid>
-
-				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es MUY BUENA,
-					MARQUE SEGÚN CONSIDERE</h4>
-				<p:panelGrid columns="3" style="width:80 px">
-					<p:outputLabel value="2.14" />
-					<p:outputLabel
-						value="¿Cómo calificaría Usted el mantenimiento y servicios de.. " />
-					<p:outputLabel value="Escala" />
-
-					<p:outputLabel value="a" />
-					<p:outputLabel value="Aulas?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-
-					<p:outputLabel value="b" />
-					<p:outputLabel value="Ascensores?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-
-					<p:outputLabel value="c" />
-					<p:outputLabel value="Baterías sanitarias?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-
-					<p:outputLabel value="d" />
-					<p:outputLabel value="Biblioteca?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-
-					<p:outputLabel value="e" />
-					<p:outputLabel value="Corredores y gradas?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-
-					<p:outputLabel value="f" />
-					<p:outputLabel value="Equipos tecnológicos?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-
-					<p:outputLabel value="g" />
-					<p:outputLabel value="Jardines?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-
-					<p:outputLabel value="h" />
-					<p:outputLabel value="Laboratorios?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
+					<h4></h4>
+					<p:panelGrid columns="3" id="validate2"
+						rendered="#{cuestionarioBean.cuestionario.p210!=4}">
+						<p:outputLabel value="2.12" />
+						<p:outputLabel
+							value="¿Cómo calificaría Usted la calidad de información de las bibliotecas virtuales de la UCE a las que ha accedido?" />
+						<p:selectOneRadio layout="grid" columns="1"
+							value="#{cuestionarioBean.cuestionario.p212}">
+							<f:selectItem itemLabel="Excelente" itemValue="1" />
+							<f:selectItem itemLabel="Bueno" itemValue="2" />
+							<f:selectItem itemLabel="Regular" itemValue="3" />
+							<f:selectItem itemLabel="Malo" itemValue="4" />
+						</p:selectOneRadio>
+					</p:panelGrid>
 
 
-					<p:outputLabel value="i" />
-					<p:outputLabel value="Parqueaderos?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
+					<h4></h4>
+					<p:panelGrid columns="3" id="validate3"
+						rendered="#{cuestionarioBean.cuestionario.p210!=4}">
+						<p:outputLabel value="2.13" />
+						<p:outputLabel
+							value="¿Cómo calificaría Usted el acceso a las bibliotecas virtuales de la UCE?" />
+						<p:selectOneRadio layout="grid" columns="1"
+							value="#{cuestionarioBean.cuestionario.p213}">
+							<f:selectItem itemLabel="Excelente" itemValue="1" />
+							<f:selectItem itemLabel="Bueno" itemValue="2" />
+							<f:selectItem itemLabel="Regular" itemValue="3" />
+							<f:selectItem itemLabel="Malo" itemValue="4" />
+						</p:selectOneRadio>
+					</p:panelGrid>
 
-					<p:outputLabel value="j" />
-					<p:outputLabel value="Pizarras?" />
-					<p:selectOneRadio>
-						<f:selectItem itemValue="1" itemLabel="1" />
-						<f:selectItem itemValue="2" itemLabel="2" />
-						<f:selectItem itemValue="3" itemLabel="3" />
-						<f:selectItem itemValue="4" itemLabel="4" />
-						<f:selectItem itemValue="5" itemLabel="5" />
-					</p:selectOneRadio>
-				</p:panelGrid>
+					<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es MUY BUENA,
+						MARQUE SEGÚN CONSIDERE</h4>
+					<p:panelGrid columns="3" style="width:80 px" id="validate4"
+						rendered="#{cuestionarioBean.cuestionario.p210!=4}">
+						<p:outputLabel value="2.14" />
+						<p:outputLabel
+							value="¿Cómo calificaría Usted el mantenimiento y servicios de.. " />
+						<p:outputLabel value="Escala" />
 
+						<p:outputLabel value="a" />
+						<p:outputLabel value="Aulas?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214a}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="b" />
+						<p:outputLabel value="Ascensores?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214b}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="c" />
+						<p:outputLabel value="Baterías sanitarias?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214c}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="d" />
+						<p:outputLabel value="Biblioteca?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214d}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="e" />
+						<p:outputLabel value="Corredores y gradas?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214e}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="f" />
+						<p:outputLabel value="Equipos tecnológicos?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214f}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="g" />
+						<p:outputLabel value="Jardines?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214g}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="h" />
+						<p:outputLabel value="Laboratorios?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214h}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+
+						<p:outputLabel value="i" />
+						<p:outputLabel value="Parqueaderos?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214i}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+
+						<p:outputLabel value="j" />
+						<p:outputLabel value="Pizarras?" />
+						<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p214j}">
+							<f:selectItem itemValue="1" itemLabel="1" />
+							<f:selectItem itemValue="2" itemLabel="2" />
+							<f:selectItem itemValue="3" itemLabel="3" />
+							<f:selectItem itemValue="4" itemLabel="4" />
+							<f:selectItem itemValue="5" itemLabel="5" />
+						</p:selectOneRadio>
+					</p:panelGrid>
+				</p:panel>
 				<h4>Marque según considere</h4>
 				<p:panelGrid columns="3">
 					<p:outputLabel value="2.15" />
 					<p:outputLabel
 						value="¿Cómo calificaría Usted la señalética en la facultad?" />
-					<p:selectOneMenu layout="grid" columns="1">
-						<f:selectItem itemLabel="Excelente" />
-						<f:selectItem itemLabel="Bueno" />
-						<f:selectItem itemLabel="Regular" />
-						<f:selectItem itemLabel="Malo" />
-						<f:selectItem itemLabel="No existe" />
-					</p:selectOneMenu>
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p215}">
+						<f:selectItem itemLabel="Excelente" itemValue="1" />
+						<f:selectItem itemLabel="Bueno" itemValue="2" />
+						<f:selectItem itemLabel="Regular" itemValue="3" />
+						<f:selectItem itemLabel="Malo" itemValue="4" />
+						<f:selectItem itemLabel="No existe" itemValue="5" />
+					</p:selectOneRadio>
 
 					<p:outputLabel value="2.16" />
 					<p:outputLabel
 						value="Al ingresar al campus universitario en su vehículo ¿Le resulta fácil ubicar un espacio para parquearlo?" />
-					<p:selectOneMenu layout="grid" columns="1">
-						<f:selectItem itemLabel="Si" />
-						<f:selectItem itemLabel="No" />
-						<f:selectItem itemLabel="No vengo en vehículo" />
-					</p:selectOneMenu>
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p216}">
+						<f:selectItem itemLabel="Si" itemValue="1" />
+						<f:selectItem itemLabel="No" itemValue="2" />
+						<f:selectItem itemLabel="No vengo en vehículo" itemValue="3" />
+					</p:selectOneRadio>
 
 					<p:outputLabel value="2.17" />
 					<p:outputLabel
 						value="En caso de que la facultad disponga de ascensor ¿Qué tan de acuerdo está Usted con el cobro por este servicio?" />
-					<p:selectOneMenu layout="grid" columns="1">
-						<f:selectItem itemLabel="Muy de acuerdo" />
-						<f:selectItem itemLabel="De acuerdo" />
-						<f:selectItem itemLabel="En desacuerdo" />
-						<f:selectItem itemLabel="En total desacuerdo" />
-					</p:selectOneMenu>
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p217}">
+						<f:selectItem itemLabel="Muy de acuerdo" itemValue="1" />
+						<f:selectItem itemLabel="De acuerdo" itemValue="2" />
+						<f:selectItem itemLabel="En desacuerdo" itemValue="3" />
+						<f:selectItem itemLabel="En total desacuerdo" itemValue="4" />
+					</p:selectOneRadio>
 				</p:panelGrid>
 
 				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es MUY BUENA,
@@ -505,7 +573,7 @@
 
 					<p:outputLabel value="a" />
 					<p:outputLabel value="Aulas?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218a}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -515,7 +583,7 @@
 
 					<p:outputLabel value="b" />
 					<p:outputLabel value="Alrededores de la facultad -UCE?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218b}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -525,7 +593,7 @@
 
 					<p:outputLabel value="c" />
 					<p:outputLabel value="Ascensores?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218c}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -535,7 +603,7 @@
 
 					<p:outputLabel value="d" />
 					<p:outputLabel value="Biblioteca?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218d}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -545,7 +613,7 @@
 
 					<p:outputLabel value="e" />
 					<p:outputLabel value="Corredores y gradas?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218e}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -555,7 +623,7 @@
 
 					<p:outputLabel value="f" />
 					<p:outputLabel value="Jardines?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218f}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -565,7 +633,7 @@
 
 					<p:outputLabel value="g" />
 					<p:outputLabel value="Laboratorios?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218g}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -575,7 +643,7 @@
 
 					<p:outputLabel value="h" />
 					<p:outputLabel value="Parqueaderos para docentes?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p218h}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -595,7 +663,7 @@
 
 					<p:outputLabel value="a" />
 					<p:outputLabel value="Guarderías?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219a}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -605,7 +673,7 @@
 
 					<p:outputLabel value="b" />
 					<p:outputLabel value="Biblioteca?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219b}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -615,7 +683,7 @@
 
 					<p:outputLabel value="c" />
 					<p:outputLabel value="Cafetería y restaurant?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219c}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -625,7 +693,7 @@
 
 					<p:outputLabel value="d" />
 					<p:outputLabel value="Canchas deportivas?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219d}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -635,7 +703,7 @@
 
 					<p:outputLabel value="e" />
 					<p:outputLabel value="Centro de emergencias médicas?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219e}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -645,7 +713,7 @@
 
 					<p:outputLabel value="f" />
 					<p:outputLabel value="Duchas?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219f}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -655,7 +723,7 @@
 
 					<p:outputLabel value="g" />
 					<p:outputLabel value="Gimnasio?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219g}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -665,7 +733,7 @@
 
 					<p:outputLabel value="h" />
 					<p:outputLabel value="Parqueaderos para docentes?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219h}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -675,7 +743,7 @@
 
 					<p:outputLabel value="i" />
 					<p:outputLabel value="Personal de seguridad?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219i}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -685,7 +753,7 @@
 
 					<p:outputLabel value="j" />
 					<p:outputLabel value="Senderos de trote/caminata?" />
-					<p:selectOneRadio>
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p219j}">
 						<f:selectItem itemValue="1" itemLabel="1" />
 						<f:selectItem itemValue="2" itemLabel="2" />
 						<f:selectItem itemValue="3" itemLabel="3" />
@@ -701,43 +769,636 @@
 					<p:outputLabel value="3.1" />
 					<p:outputLabel
 						value="¿Qué tan satisfecho está con el sueldo que recibe?" />
-					<p:selectOneMenu layout="grid" columns="1">
-						<f:selectItem itemLabel="Muy satisfecho" />
-						<f:selectItem itemLabel="Satisfecho" />
-						<f:selectItem itemLabel="Nada satisfecho" />
-					</p:selectOneMenu>
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p31}">
+						<f:selectItem itemLabel="Muy satisfecho" itemValue="1" />
+						<f:selectItem itemLabel="Satisfecho" itemValue="2" />
+						<f:selectItem itemLabel="Nada satisfecho" itemValue="3" />
+					</p:selectOneRadio>
 
 					<p:outputLabel value="3.2" />
 					<p:outputLabel
 						value="¿Cómo escogería Usted su periodo o periodos de vacaciones?" />
-					<p:selectOneMenu layout="grid" columns="1">
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p32}">
 						<f:selectItem
-							itemLabel="a)	15 días entre semestre y semestre (actual)" />
-						<f:selectItem itemLabel="b)	30 días a escoger en el año" />
-						<f:selectItem itemLabel="c)	30 días en agosto" />
-						<f:selectItem itemLabel="d)	30 días en febrero" />
-						<f:selectItem itemLabel="Otra" />
-					</p:selectOneMenu>
+							itemLabel="15 días entre semestre y semestre (actual)"
+							itemValue="1" />
+						<f:selectItem itemLabel="30 días a escoger en el año"
+							itemValue="2" />
+						<f:selectItem itemLabel="30 días en agosto" itemValue="3" />
+						<f:selectItem itemLabel="30 días en febrero" itemValue="4" />
+						<f:selectItem itemLabel="Otra" itemValue="5" />
+					</p:selectOneRadio>
 
 					<p:outputLabel value="3.3" />
 					<p:outputLabel
 						value="¿Con que modalidad de control de asistencia (reloj biométrico) estaría Usted de acuerdo? " />
-					<p:selectOneMenu layout="grid" columns="1">
+					<p:selectOneRadio layout="grid" columns="1"
+						value="#{cuestionarioBean.cuestionario.p33}">
 						<f:selectItem
-							itemLabel="Entrada y salida de toda la jornada (todo el día)" />
+							itemLabel="Entrada y salida de toda la jornada (todo el día)"
+							itemValue="1" />
 						<f:selectItem
-							itemLabel="Entrada y salida de cada jornada (mañana y tarde)" />
-						<f:selectItem itemLabel="Entrada y salida de cada clase" />
-						<f:selectItem itemLabel="Cada 2 horas" />
-						<f:selectItem itemLabel="Cada hora" />
-						<f:selectItem itemLabel="Ninguna" />
-					</p:selectOneMenu>
+							itemLabel="Entrada y salida de cada jornada (mañana y tarde)"
+							itemValue="2" />
+						<f:selectItem itemLabel="Entrada y salida de cada clase"
+							itemValue="3" />
+						<f:selectItem itemLabel="Cada 2 horas" itemValue="4" />
+						<f:selectItem itemLabel="Cada hora" itemValue="5" />
+						<f:selectItem itemLabel="Ninguna" itemValue="6" />
+					</p:selectOneRadio>
 				</p:panelGrid>
 
+				<p:separator />
 				<h3>IV. ACADEMICO</h3>
+				<p:separator />
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="4.1" />
+					<p:outputLabel
+						value=" ¿Cómo calificaría al proceso de re-categorización a profesores en cuanto a:   " />
+					<p:outputLabel value="[MARQUE SEGÚN CONSIDERE]" />
 
+					<p:outputLabel value="a" />
+					<p:outputLabel value="Procedimiento?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p41a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Transparencia?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p41b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="Aplicación del instructivo?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p41c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="Difusión del proceso?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p41d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel
+						value="Coherencia Reglamento CES con Instructivo UCE" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p41e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="f" />
+					<p:outputLabel value="Plazos dados?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p41f}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="g" />
+					<p:outputLabel value="Objetividad dada al proceso?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p41g}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="4.2" />
+					<p:outputLabel
+						value=" ¿Cómo calificaría al proceso de la investigación que se desarrolla en la facultad en cuanto a:   " />
+					<p:outputLabel value="[MARQUE SEGÚN CONSIDERE]" />
+
+					<p:outputLabel value="a" />
+					<p:outputLabel
+						value="Política institucional para la investigación?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p42a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Condiciones generales para investigar?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p42b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="Presupuesto?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p42c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="Infraestructura física?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p42d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel value="Materiales, equipos e insumos?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p42e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="f" />
+					<p:outputLabel value="Difusión?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p42f}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="g" />
+					<p:outputLabel value="Personal de apoyo?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p42g}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="4.3" />
+					<p:outputLabel
+						value=" ¿Cómo calificaría al proceso de vinculación con la sociedad de la facultad en cuanto a:   " />
+					<p:outputLabel value="[MARQUE SEGÚN CONSIDERE]" />
+
+					<p:outputLabel value="a" />
+					<p:outputLabel value="Política institucional para la vinculación?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p43a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Convenios de vinculación?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p43b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="Presupuesto?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p43c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="Infraestructura física?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p43d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel value="Materiales, equipos e insumos?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p43e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="f" />
+					<p:outputLabel value="Difusión?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p43f}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="g" />
+					<p:outputLabel value="Personal de apoyo?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p43g}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="4.4" />
+					<p:outputLabel
+						value=" ¿Cómo calificaría al proceso de capacitación a profesores …" />
+					<p:outputLabel value="[MARQUE SEGÚN CONSIDERE]" />
+
+					<p:outputLabel value="a" />
+					<p:outputLabel value="Política institucional para capacitación?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p44a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Convenios de vinculación?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p44b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="Presupuesto?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p44c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="Infraestructura física?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p44d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel value="Materiales, equipos e insumos?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p44e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="f" />
+					<p:outputLabel value="Difusión?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p44f}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="g" />
+					<p:outputLabel value="Personal de apoyo?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p44g}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="4.5" />
+					<p:outputLabel
+						value="¿Cómo calificaría el último proceso de Concurso de Méritos y Oposición la facultad en cuanto a: " />
+					<p:outputLabel value="[MARQUE SEGÚN CONSIDERE]" />
+
+					<p:outputLabel value="a" />
+					<p:outputLabel value="Transparencia?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p45a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Presupuesto?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p45b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="La logística para los pares externos?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p45c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="El procedimiento implementado?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p45d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel value="La participación a única catedra? " />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p45e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<p:separator />
+				<h3>V. EVALUACION DE GESTIÓN</h3>
+				<p:separator />
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="5.1" />
+					<p:outputLabel
+						value=" ¿Cómo calificaría la gestión financiera de :   " />
+					<p:outputLabel
+						value="[Marque según considere el nivel de gestión] " />
+
+					<p:outputLabel value="a" />
+					<p:outputLabel value="El director/Directora de Carrera?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p51a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Sub-Decano / Sub-Decana?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p51b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="Decano/ Decana?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p51c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="Vicerrector Administrativo?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p51d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel value="Vicerrector Académico?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p51e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="f" />
+					<p:outputLabel value="Rector actual?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p51f}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="5.2" />
+					<p:outputLabel
+						value=" ¿Cómo calificaría la gestión académica de:   " />
+					<p:outputLabel
+						value="[Marque según considere el nivel de gestión] " />
+
+					<p:outputLabel value="a" />
+					<p:outputLabel value="El director/Directora de Carrera?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p52a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Sub-Decano / Sub-Decana?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p52b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="Decano/ Decana?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p52c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="Vicerrector Administrativo?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p52d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel value="Vicerrector Académico?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p52e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="f" />
+					<p:outputLabel value="Rector actual?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p52f}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<h4>En una escala de 1 a 5, donde 1 es MALA y 5 es EXCELENTE,</h4>
+				<p:panelGrid columns="3">
+					<p:outputLabel value="5.3" />
+					<p:outputLabel
+						value=" ¿Cómo calificaría la gestión administrativa de :   " />
+					<p:outputLabel
+						value="[Marque según considere el nivel de gestión] " />
+
+					<p:outputLabel value="a" />
+					<p:outputLabel value="El director/Directora de Carrera?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p53a}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="b" />
+					<p:outputLabel value="Sub-Decano / Sub-Decana?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p53b}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="c" />
+					<p:outputLabel value="Decano/ Decana?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p53c}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="d" />
+					<p:outputLabel value="Vicerrector Administrativo?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p53d}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="e" />
+					<p:outputLabel value="Vicerrector Académico?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p53e}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+
+					<p:outputLabel value="f" />
+					<p:outputLabel value="Rector actual?" />
+					<p:selectOneRadio value="#{cuestionarioBean.cuestionario.p53f}">
+						<f:selectItem itemValue="1" itemLabel="1" />
+						<f:selectItem itemValue="2" itemLabel="2" />
+						<f:selectItem itemValue="3" itemLabel="3" />
+						<f:selectItem itemValue="4" itemLabel="4" />
+						<f:selectItem itemValue="5" itemLabel="5" />
+					</p:selectOneRadio>
+				</p:panelGrid>
+
+				<h3>Gracias por su colaboración</h3>
 
 			</p:panel>
+
 		</h:form>
 	</ui:define>
 	<ui:define name="autor">FAPUC</ui:define>
