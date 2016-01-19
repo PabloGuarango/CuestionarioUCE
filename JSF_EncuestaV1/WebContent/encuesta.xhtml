@@ -17,7 +17,16 @@
 				<p:separator />
 				<p:commandButton value="Guardar"
 					action="#{cuestionarioBean.guardar()}" process="@this"
-					update="contenedor"></p:commandButton>
+					update="contenedor">
+					<p:confirm header="Confirmation" message="Are you sure?"
+						icon="ui-icon-alert" />
+				</p:commandButton>
+				<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+					<p:commandButton value="Si" type="button"
+						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					<p:commandButton value="No" type="button"
+						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				</p:confirmDialog>
 				<p:separator />
 				<p:panelGrid columns="3" style="width:80 px">
 					<p:outputLabel value="1.1" />
@@ -69,35 +78,44 @@
 				<p:panelGrid columns="4">
 					<p:outputLabel value="1.5a" />
 					<p:outputLabel value="Clases:	" />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15a}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15a}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5b" />
 					<p:outputLabel value="Comisión de acreditación: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15b}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15b}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5c" />
 					<p:outputLabel value="Comisión de re-diseño de la carrera: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15c}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15c}"
+						required="true" >
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5d" />
 					<p:outputLabel value="Coordinación de área: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15d}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15d}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5e" />
 					<p:outputLabel value="Coordinación de asignatura: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15e}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15e}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
@@ -105,84 +123,108 @@
 
 					<p:outputLabel value="1.5f" />
 					<p:outputLabel value="Corrección de pruebas y exámenes: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15f}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15f}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5g" />
 					<p:outputLabel value="Dirección /Codirección de Tesis: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15g}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15g}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5h" />
 					<p:outputLabel value="Funciones directivas: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15h}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15h}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5i" />
 					<p:outputLabel value="Investigación Financiado por la UCE: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15i}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15i}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5j" />
 					<p:outputLabel value="Investigación Financiado por SENESCyT: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15j}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15j}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5k" />
 					<p:outputLabel value="Practicas pre profesionales: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15k}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15k}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5l" />
 					<p:outputLabel value="Preparación de Clase: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15l}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15l}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5m" />
 					<p:outputLabel value="Preparación de exámenes complexivos: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15m}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15m}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5n" />
 					<p:outputLabel value="Proyecto semilla: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15n}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15n}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5o" />
 					<p:outputLabel value="Tutorías: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15o}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15o}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5p" />
 					<p:outputLabel value="Vinculación con la comunidad: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15p}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15p}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
 
 					<p:outputLabel value="1.5q" />
 					<p:outputLabel value="Otras: " />
-					<p:inputText value="#{cuestionarioBean.cuestionario.p15q}" required="true">
+					<p:inputText value="#{cuestionarioBean.cuestionario.p15q}"
+						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />
@@ -196,6 +238,7 @@
 						value="Incluyendo este semestre, ¿Cuántos años trabaja en la UCE? " />
 					<p:inputText value="#{cuestionarioBean.cuestionario.p16}"
 						required="true">
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Años" />
@@ -216,7 +259,7 @@
 						<f:selectItem itemLabel="No existe" itemValue="5" />
 						<f:selectItem itemLabel="Existe pero nunca lo he usado"
 							itemValue="6" />
-							<p:ajax process="@this" event="change" update="@this"></p:ajax>
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 					</p:selectOneRadio>
 				</p:panelGrid>
 
@@ -226,25 +269,24 @@
 					<p:outputLabel value="2.2" />
 					<p:outputLabel
 						value="Al momento de desarrollar sus actividades docentes ¿Dónde las desarrolla?" />
-					<p:selectManyCheckbox layout="grid" columns="1">
+					<p:selectManyCheckbox layout="grid" columns="1"
+						value="#{cuestionarioBean.selected22}">
 						<f:selectItem
 							itemLabel="Cuento con una oficina (cubículo) individual asignado por la UCE"
-							itemValue="#{cuestionarioBean.cuestionario.p22a}" />
+							itemValue="a" />
 						<f:selectItem
 							itemLabel="Comparto un espacio (cubículo) con otro colega"
-							itemValue="#{cuestionarioBean.cuestionario.p22b}" />
+							itemValue="b" />
 						<f:selectItem
 							itemLabel="En las instalaciones de la Asociación de profesores"
-							itemValue="#{cuestionarioBean.cuestionario.p22c}" />
+							itemValue="c" />
 						<f:selectItem itemLabel="En casa / oficina particular"
-							itemValue="#{cuestionarioBean.cuestionario.p22d}" />
+							itemValue="d" />
 						<f:selectItem itemLabel="En un espacio dentro del laboratorio"
-							itemValue="#{cuestionarioBean.cuestionario.p22e}" />
-						<f:selectItem itemLabel="En la biblioteca"
-							itemValue="#{cuestionarioBean.cuestionario.p22f}" />
-						<f:selectItem itemLabel="Otros lugares"
-							itemValue="#{cuestionarioBean.cuestionario.p22g}" />
-							<p:ajax process="@this" event="change" update="@this"></p:ajax>
+							itemValue="e" />
+						<f:selectItem itemLabel="En la biblioteca" itemValue="f" />
+						<f:selectItem itemLabel="Otros lugares" itemValue="g" />
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -253,28 +295,27 @@
 					<p:outputLabel value="2.3" />
 					<p:outputLabel
 						value="Al momento de brindar tutoría a estudiantes ¿Dónde las desarrolla?" />
-					<p:selectManyCheckbox layout="grid" columns="1">
+					<p:selectManyCheckbox layout="grid" columns="1"
+						value="#{cuestionarioBean.selected23}">
 						<f:selectItem
 							itemLabel="En mi oficina (cubículo) individual asignado por la UCE"
-							itemValue="#{cuestionarioBean.cuestionario.p23a}" />
+							itemValue="a" />
 						<f:selectItem
 							itemLabel="En un espacio (cubículo) compartido con otro colega"
-							itemValue="#{cuestionarioBean.cuestionario.p23b}" />
+							itemValue="b" />
 						<f:selectItem
 							itemLabel="En las instalaciones de la Asociación de profesores"
-							itemValue="#{cuestionarioBean.cuestionario.p23c}" />
+							itemValue="c" />
 						<f:selectItem itemLabel="En casa / oficina particular"
-							itemValue="#{cuestionarioBean.cuestionario.p23d}" />
+							itemValue="d" />
 						<f:selectItem itemLabel="En un espacio dentro del laboratorio"
-							itemValue="#{cuestionarioBean.cuestionario.p23e}" />
+							itemValue="e" />
 						<f:selectItem
 							itemLabel="En un espacio determinado por la UCE para tutorías"
-							itemValue="#{cuestionarioBean.cuestionario.p23f}" />
-						<f:selectItem itemLabel="En la biblioteca"
-							itemValue="#{cuestionarioBean.cuestionario.p23g}" />
-						<f:selectItem itemLabel="Otros lugares"
-							itemValue="#{cuestionarioBean.cuestionario.p23h}" />
-							<p:ajax process="@this" event="change" update="@this"></p:ajax>
+							itemValue="f" />
+						<f:selectItem itemLabel="En la biblioteca" itemValue="g" />
+						<f:selectItem itemLabel="Otros lugares" itemValue="h" />
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -283,19 +324,17 @@
 					<p:outputLabel value="2.4" />
 					<p:outputLabel
 						value="Cuando requiere realizar un trabajo relacionado con actividades docentes ¿El trabajo informático lo hace en" />
-					<p:selectManyCheckbox layout="grid" columns="1">
+					<p:selectManyCheckbox layout="grid" columns="1"
+						value="#{cuestionarioBean.selected24}">
 						<f:selectItem itemLabel="Computadora asignada por la UCE?"
-							itemValue="#{cuestionarioBean.cuestionario.p24a}" />
-						<f:selectItem itemLabel="Computadora personal?"
-							itemValue="#{cuestionarioBean.cuestionario.p24b}" />
+							itemValue="a" />
+						<f:selectItem itemLabel="Computadora personal?" itemValue="b" />
 						<f:selectItem
 							itemLabel="Computadora de la asociación de profesores?"
-							itemValue="#{cuestionarioBean.cuestionario.p24c}" />
-						<f:selectItem itemLabel="Computadora de alquiler?"
-							itemValue="#{cuestionarioBean.cuestionario.p24d}" />
-						<f:selectItem itemLabel="Otras computadoras?"
-							itemValue="#{cuestionarioBean.cuestionario.p24e}" />
-							<p:ajax process="@this" event="change" update="@this"></p:ajax>
+							itemValue="c" />
+						<f:selectItem itemLabel="Computadora de alquiler?" itemValue="d" />
+						<f:selectItem itemLabel="Otras computadoras?" itemValue="e" />
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -305,19 +344,17 @@
 					<p:outputLabel value="2.5" />
 					<p:outputLabel
 						value="Cuando requiere imprimir un trabajo relacionado a actividades docentes ¿El trabajo informático lo hace en: " />
-					<p:selectManyCheckbox layout="grid" columns="1">
+					<p:selectManyCheckbox layout="grid" columns="1"
+						value="#{cuestionarioBean.selected25}">
 						<f:selectItem itemLabel="Impresora asignada por la UCE?"
-							itemValue="#{cuestionarioBean.cuestionario.p25a}" />
-						<f:selectItem itemLabel="Impresora personal?"
-							itemValue="#{cuestionarioBean.cuestionario.p25b}" />
+							itemValue="a" />
+						<f:selectItem itemLabel="Impresora personal?" itemValue="b" />
 						<f:selectItem
 							itemLabel="Impresora de la asociación de profesores?"
-							itemValue="#{cuestionarioBean.cuestionario.p25c}" />
-						<f:selectItem itemLabel="Impresora de alquiler?"
-							itemValue="#{cuestionarioBean.cuestionario.p25d}" />
-						<f:selectItem itemLabel="Otras impresoras?"
-							itemValue="#{cuestionarioBean.cuestionario.p25e}" />
-							<p:ajax process="@this" event="change" update="@this"></p:ajax>
+							itemValue="c" />
+						<f:selectItem itemLabel="Impresora de alquiler?" itemValue="d" />
+						<f:selectItem itemLabel="Otras impresoras?" itemValue="e" />
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 
@@ -326,22 +363,20 @@
 					<p:outputLabel value="2.6" />
 					<p:outputLabel
 						value="De requerir realizar una llamada telefónica relacionada con las actividades de la UCE, ¿Utiliza:   " />
-					<p:selectManyCheckbox layout="grid" columns="1">
+					<p:selectManyCheckbox layout="grid" columns="1"
+						value="#{cuestionarioBean.selected26}">
 						<f:selectItem
 							itemLabel="1.	Teléfono de mi oficina (cubículo) en la facultad?"
-							itemValue="#{cuestionarioBean.cuestionario.p26a}" />
+							itemValue="a" />
 						<f:selectItem
 							itemLabel="2.	Teléfono de secretaría u otras dependencias de la facultad?"
-							itemValue="#{cuestionarioBean.cuestionario.p26b}" />
+							itemValue="b" />
 						<f:selectItem itemLabel="3.	Teléfono de asociación de profesores?"
-							itemValue="#{cuestionarioBean.cuestionario.p26c}" />
-						<f:selectItem itemLabel="4.	Teléfono personal?"
-							itemValue="#{cuestionarioBean.cuestionario.p26d}" />
-						<f:selectItem itemLabel="5.	Teléfono de alquiler?"
-							itemValue="#{cuestionarioBean.cuestionario.p26e}" />
-						<f:selectItem itemLabel="Otros?"
-							itemValue="#{cuestionarioBean.cuestionario.p26f}" />
-							<p:ajax process="@this" event="change" update="@this"></p:ajax>
+							itemValue="c" />
+						<f:selectItem itemLabel="4.	Teléfono personal?" itemValue="d" />
+						<f:selectItem itemLabel="5.	Teléfono de alquiler?" itemValue="e" />
+						<f:selectItem itemLabel="Otros?" itemValue="f" />
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 					</p:selectManyCheckbox>
 				</p:panelGrid>
 

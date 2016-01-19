@@ -31,6 +31,7 @@ public class LoginBean {
 					&& user.getToken().equals(usuario.getToken())
 					&& user.getCorreo().equals(usuario.getCorreo())) {
 				System.out.println("Entro>>>>>>>>");
+				usuario = new Usuario();
 				return "/encuesta.jsf";
 			}
 		}
