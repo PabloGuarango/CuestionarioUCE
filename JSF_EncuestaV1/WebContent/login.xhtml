@@ -15,18 +15,18 @@
 				<p:outputLabel value="BIENVENIDOS" />
 				<p:separator />
 				<p:panelGrid columns="2">
-					<h:outputLabel for="Cedula" value="Cedula:"
-						style="font-weight: bold;" />
-					<p:inputText id="Cedula" value="#{loginBean.usuario.cedula}"
-						required="true">
-						<f:validateBean />
-					</p:inputText>
-					<h:outputLabel for="Correo" value="Correo:"
-						style="font-weight: bold;" />
-					<p:inputText id="Correo" value="#{loginBean.usuario.correo}"
-						required="true">
-						<f:validateBean />
-					</p:inputText>
+<!-- 					<h:outputLabel for="Cedula" value="Cedula:" -->
+<!-- 						style="font-weight: bold;" /> -->
+<!-- 					<p:inputText id="Cedula" value="#{loginBean.usuario.cedula}" -->
+<!-- 						required="true"> -->
+<!-- 						<f:validateBean /> -->
+<!-- 					</p:inputText> -->
+<!-- 					<h:outputLabel for="Correo" value="Correo:" -->
+<!-- 						style="font-weight: bold;" /> -->
+<!-- 					<p:inputText id="Correo" value="#{loginBean.usuario.correo}" -->
+<!-- 						required="true"> -->
+<!-- 						<f:validateBean /> -->
+<!-- 					</p:inputText> -->
 					<h:outputLabel for="Token" value="Token:"
 						style="font-weight: bold;" />
 					<p:inputText id="Token" value="#{loginBean.usuario.token}"
@@ -36,7 +36,7 @@
 				</p:panelGrid>
 				<p:separator />
 				<p:commandButton value="Iniciar encuesta"
-					action="#{loginBean.validarUsuario()}" update="@form"/>
+					action="#{loginBean.validarUsuario()}" update="@form growl"/>
 			</p:panel>
 		</h:form>
 	</ui:define>

@@ -10,6 +10,7 @@
 	<ui:define name="tituloFormulario"></ui:define>
 	<ui:define name="contenido">
 		<h:form>
+		<p:growl id="growl" showDetail="true" sticky="true" /> 
 			<p:panel id="contenedor">
 
 				<h3>I.IDENTIFICACIÓN</h3>
@@ -17,8 +18,8 @@
 				<p:separator />
 				<p:commandButton value="Guardar"
 					action="#{cuestionarioBean.guardar()}" process="@this"
-					update="contenedor">
-					<p:confirm header="Confirmation" message="Are you sure?"
+					update="contenedor growl">
+					<p:confirm header="Confirmacion" message="¿Esta seguro?"
 						icon="ui-icon-alert" />
 				</p:commandButton>
 				<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
@@ -98,6 +99,7 @@
 					<p:outputLabel value="Comisión de re-diseño de la carrera: " />
 					<p:inputText value="#{cuestionarioBean.cuestionario.p15c}"
 						required="true" >
+						<p:ajax process="@this" event="change" update="@this"></p:ajax>
 						<f:validateBean />
 					</p:inputText>
 					<p:outputLabel value="Horas" />

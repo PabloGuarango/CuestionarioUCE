@@ -27,17 +27,17 @@ public class LoginBean {
 	public String validarUsuario() {
 		List<Usuario> listUsers = servicioUsuario.obtenerListaCombo("Usuario");
 		for (Usuario user : listUsers) {
-			if (user.getCedula().equals(usuario.getCedula())
-					&& user.getToken().equals(usuario.getToken())
-					&& user.getCorreo().equals(usuario.getCorreo())) {
+			if (user.getToken(). equals(usuario.getToken())) {
 				System.out.println("Entro>>>>>>>>");
+				user.setToken("token123UCE");
+				servicioUsuario.actualizar(user);
 				usuario = new Usuario();
 				return "/encuesta.jsf";
 			}
 		}
 		FacesContext context = FacesContext.getCurrentInstance();
-		context.addMessage(null, new FacesMessage("Successful",
-				"Your message: " ));
+		context.addMessage(null	, new FacesMessage("Error",
+				"Token incorrecto"));
 		return null;
 	}
 	public Usuario getUsuario() {
